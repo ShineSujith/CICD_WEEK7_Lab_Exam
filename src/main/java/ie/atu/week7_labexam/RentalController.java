@@ -23,7 +23,7 @@ public class RentalController {
     }
     @PutMapping("/rentals/{rentalCode}")
     public List<Rental> changeRental(@RequestBody Rental rental, String rentalCode) {
-
+        return myRental.editRentalByCode(rental, rentalCode);
     }
     @DeleteMapping("/rentals/{rentalCode}")
     public List<Rental> deleteRental(@RequestBody Rental rental, String rentalCode) {

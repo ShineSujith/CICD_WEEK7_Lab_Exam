@@ -23,6 +23,15 @@ public class RentalService {
         }
     }
 
-    public List<Rental>
+    public List<Rental> editRentalByCode(Rental rental, String rentalCode) {
+        for (Rental r: myList){
+            if(r.getRentalCode() == rentalCode) {
+                r.setRentalCode(rental.getCarModel());
+                r.setRentalCode(rental.getRenterName());
+                r.setRentalCode(rental.getRenterEmail());
+            }
+        }
+        return myList;
+    }
 
 }

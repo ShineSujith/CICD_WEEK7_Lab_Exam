@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 @Data
@@ -21,8 +22,8 @@ public class Rental {
     private String renterEmail;
     @FutureOrPresent(message = "Rental start date is invalid.")
     private Date rentalStartDate;
-
+    @Future(message = "Must be after the rental start date.")
     private Date rentalEndDate;
     @Positive(message = "Must be a positive value.")
-    private Decimal dailyRate;
+    private DecimalFormat dailyRate;
 }

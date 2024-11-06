@@ -1,5 +1,6 @@
 package ie.atu.week7_labexam;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class RentalController {
     }
 
     @PostMapping("/rentals")
-    public List<Rental> addRental(@RequestBody Rental rental) {
+    public List<Rental> addRental(@Valid @RequestBody Rental rental) {
         return myRental.createRental(rental);
     }
     @GetMapping("/rentals/{rentalCode}")
@@ -22,7 +23,7 @@ public class RentalController {
         return myRental.getRentalByCode(rentalCode);
     }
     @PutMapping("/rentals/{rentalCode}")
-    public List<Rental> changeRental(@RequestBody Rental rental, @PathVariable String rentalCode) {
+    public List<Rental> changeRental(@Valid @RequestBody Rental rental, @PathVariable String rentalCode) {
         return myRental.editRentalByCode(rental, rentalCode);
     }
     @DeleteMapping("/rentals/{rentalCode}")

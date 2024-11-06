@@ -34,4 +34,9 @@ public class RentalService {
         return myList;
     }
 
+    public List<Rental> cancelRentalByCode(String rentalCode) {
+        myList.removeIf(rental -> rental.getRentalCode() == rentalCode);
+        return myList;
+    }
+
 }

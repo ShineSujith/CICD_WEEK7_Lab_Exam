@@ -18,15 +18,15 @@ public class RentalController {
         return myRental.createRental(rental);
     }
     @GetMapping("/rentals/{rentalCode}")
-    public List<Rental> getRental(String rentalCode) {
+    public List<Rental> getRental(@PathVariable String rentalCode) {
         return myRental.getRentalByCode(rentalCode);
     }
     @PutMapping("/rentals/{rentalCode}")
-    public List<Rental> changeRental(@RequestBody Rental rental, String rentalCode) {
+    public List<Rental> changeRental(@RequestBody Rental rental, @PathVariable String rentalCode) {
         return myRental.editRentalByCode(rental, rentalCode);
     }
     @DeleteMapping("/rentals/{rentalCode}")
-    public List<Rental> deleteRental(@RequestBody Rental rental, String rentalCode) {
-
+    public List<Rental> deleteRental(@PathVariable String rentalCode) {
+        return myRental.cancelRentalByCode(rentalCode);
     }
 }

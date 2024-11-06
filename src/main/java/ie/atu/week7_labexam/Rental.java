@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,7 +14,7 @@ public class Rental {
     private String carModel;
     private String renterName;
     private String renterEmail;
-    private String rentalStartDate;
-    private String rentalEndDate;
-    private float dailyRate;
+    private Date rentalStartDate;
+    private Date rentalEndDate;
+    private Decimal dailyRate;
 }

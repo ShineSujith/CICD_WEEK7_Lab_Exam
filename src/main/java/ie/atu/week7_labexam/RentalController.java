@@ -6,9 +6,16 @@ import java.util.List;
 
 @RestController
 public class RentalController {
+
+    private final RentalService myRental;
+
+    public RentalController(RentalService myRental) {
+        this.myRental = myRental;
+    }
+
     @PostMapping("/rentals")
     public List<Rental> addRental(@RequestBody Rental rental) {
-
+        return myRental.createRental(rental);
     }
     @GetMapping("/rentals/{rentalCode}")
     public List<Rental> getRental(String rentalCode) {

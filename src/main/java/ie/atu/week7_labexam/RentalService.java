@@ -17,14 +17,11 @@ public class RentalService{
     }
 
     public List<Rental> getRentalByCode(String rentalCode) {
-        int i = 0;
         for (Rental r: myList){
             if(r.getRentalCode() == rentalCode) {
-                break;
+                return myList;
             }
-            i++;
         } throw new NoSuchElementException("Rental Not Found");
-        return myList.get(i);
     }
 
     public List<Rental> editRentalByCode(Rental rental, String rentalCode) {

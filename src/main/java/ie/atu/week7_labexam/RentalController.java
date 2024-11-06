@@ -19,7 +19,7 @@ public class RentalController {
     }
     @GetMapping("/rentals/{rentalCode}")
     public List<Rental> getRental(String rentalCode) {
-
+        return myRental.getRentalByCode(rentalCode);
     }
     @PutMapping("/rentals/{rentalCode}")
     public List<Rental> changeRental(@RequestBody Rental rental, String rentalCode) {
